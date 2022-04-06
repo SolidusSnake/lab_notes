@@ -1,2 +1,2 @@
 # lab_notes
-lab notes
+Lab notes for various VulnHub machines and TryHackMe rooms
