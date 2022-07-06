@@ -8,3 +8,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Bob](./Labs/Bob.md)
 
 ## [(VH) Tommy Boy: 1](./Labs/Tommy.md)
+
+## [(VH) Beelzebub: 1](./Labs/Beelzebub.md)
