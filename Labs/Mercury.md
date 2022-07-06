@@ -1,7 +1,8 @@
 # The Planets: Mercury
 https://www.vulnhub.com/entry/the-planets-mercury,544/
 
-## Step 1: Discovery
+## Discovery
+
 ### Command used: arp-scan<br>
 <br>
 
@@ -14,7 +15,7 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 172.16.250.91	08:00:27:dc:40:fb	PCS Systemtechnik GmbH
 ```
 
-## Step 2: Port scan
+## Port scan
 <i>A full scan determined ports 22 and 8080 were open, and a hosts entry was created for the IP</i>
 
 ### Command used: nmap
@@ -82,7 +83,8 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 92.63 seconds
 ```
 
-## Step 3: HTTP enumeration
+## HTTP enumeration
+
 ### Command used: gobuster
 <br>
 
@@ -125,7 +127,8 @@ Adding a special character to the URL to test for SQLi hints that injection is p
 
 ![sqli](./docs/mercury/mercury_04_sqli.png)
 
-## Step 4: SQL injection
+## SQL injection
+
 ### You can either manually try strings, or use a tool like SQLMap
 <br>
 
@@ -345,7 +348,8 @@ Enumerating columns from <b>USERS</b> table:
 
 ![passwords](./docs/mercury/mercury_09_passwords.png)
 
-## Step 5: SSH and root access
+## SSH and root access
+
 ### Command used: msfconsole
 <br>
 

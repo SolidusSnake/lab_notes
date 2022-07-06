@@ -1,7 +1,8 @@
 # Bob (VulnHub)
 https://www.vulnhub.com/entry/bob-101,226/
 
-## Step 1: Discovery
+## Discovery
+
 ### Command used: arp-scan<br>
 <br>
 
@@ -13,7 +14,8 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 172.16.250.95	08:00:27:22:d6:b9	PCS Systemtechnik GmbH
 ```
 
-## Step 2: Port scan
+## Port scan
+
 ### Command used: nmap
 <br>
 
@@ -49,7 +51,8 @@ Nmap done: 1 IP address (1 host up) scanned in 6.35 seconds
 
 ```
 
-## Step 3: HTTP enumeration
+## HTTP enumeration
+
 ### Command used: gobuster
 <br>
 
@@ -156,7 +159,7 @@ theadminisdumb
 I hope bob is fired after the future second breach because of his incompetence. I almost want to fix it myself but at the same time it doesn’t affect me if they get breached, I get paid, he gets fired it’s a good time.
 ```
 
-## Step 4: SSH and privilege escalation
+## SSH and privilege escalation
 <br>
 
 Apparently, we have our first set of credentials: **elliot : theadminisdumb**. Attempting to login through SSH was successful!<br><br>

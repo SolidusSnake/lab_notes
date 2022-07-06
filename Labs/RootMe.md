@@ -2,7 +2,8 @@
 https://tryhackme.com/room/rrootme
 
 
-## Step 1: Port scan (discovery phase skipped as THM gives you the IP address)
+## Port scan (discovery phase skipped as THM gives you the IP address)
+
 ### Command used: nmap<br>
 <br>
 
@@ -21,7 +22,8 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 9.63 seconds
 ```
 
-## Step 2: HTTP enumeration
+## HTTP enumeration
+
 ### Command used: gobuster
 <br>
 
@@ -56,7 +58,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
 ```
 
-## Step 3: Reverse PHP shell
+## Reverse PHP shell
 <br>
 
 Nothing interesting at the base URL:<br><br>
@@ -105,7 +107,7 @@ fg
 export TERM=xterm
 ```
 
-## Step 4: Privilege escalation
+## Privilege escalation
 <br>
 
 Now that we have a stable shell, we look for binaries with the SUID bit enabled:

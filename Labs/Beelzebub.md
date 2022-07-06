@@ -398,8 +398,9 @@ wget https://www.exploit-db.com/download/47009
 clear
 ```
 
-## Software exploitation
+## Privilege escalation
 <br>
+
 Looking at this exploit, we can see that it is meant for Serv-U. Judging by the "*Serv-U-Tray.conf*" file, we can determine that Serv-U is running on the server.<br><br>
 
 "*47009.c*"

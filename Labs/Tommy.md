@@ -2,6 +2,7 @@
 https://www.vulnhub.com/entry/tommy-boy-1,157/
 
 ## Discovery
+
 ### Command used: arp-scan
 <br>
 
@@ -54,6 +55,7 @@ Nmap done: 1 IP address (1 host up) scanned in 6.36 seconds
 ```
 
 ## HTTP enumeration
+
 ### Command used: gobuster
 <br>
 
@@ -1094,6 +1096,7 @@ Flag data: TinyHead
 <br>
 
 ## Zip and user cracking
+
 ### Commands used: crunch, JtR, WPScan
 <br>
 
