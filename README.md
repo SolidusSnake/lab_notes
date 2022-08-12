@@ -11,4 +11,4 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 
 ## [(VH) Beelzebub: 1](./Labs/Beelzebub.md)
 
-## [THM] Smag Grotto](./Labs/SmagGrotto.md)
+## [(THM) Smag Grotto](./Labs/SmagGrotto.md)
