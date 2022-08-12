@@ -10,3 +10,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Tommy Boy: 1](./Labs/Tommy.md)
 
 ## [(VH) Beelzebub: 1](./Labs/Beelzebub.md)
+
+## [THM] Smag Grotto](./Labs/SmagGrotto.md)
