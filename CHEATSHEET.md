@@ -55,6 +55,11 @@ find / -type f -user root -perm -4000 2>/dev/null (find suid files)
 crunch 13 13 -t bev,%%@@^1995 -o wordlist.txt
 ```
 
+## hydra
+```
+hydra ssh://<ip>:<port> -l username -P /opt/rockyou.txt
+```
+
 ## sqlmap
 ```
 sqlmap -u http://website:port/directory --answers="follow=Y" --batch
