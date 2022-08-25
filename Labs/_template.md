@@ -2,7 +2,8 @@
 'url'
 
 ## Discovery
-### Command used: arp-scan<br>
+
+### Tool used: arp-scan
 <br>
 
 ```
@@ -15,9 +16,8 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 ```
 
 ## Port scan
-<i>A full scan determined ports 22 and 8080 were open, and a hosts entry was created for the IP</i>
 
-### Command used: nmap
+### Tool used: nmap
 <br>
 
 ```
@@ -29,7 +29,8 @@ Host is up (0.00055s latency).
 ```
 
 ## HTTP enumeration
-### Command used: gobuster
+
+### Tool used: gobuster
 <br>
 
 ```
@@ -50,7 +51,7 @@ NOTES AND STEPS:<br><br>
 ### You can either manually try strings, or use a tool like SQLMap
 <br>
 
-### Command used: SQLMap
+### Tool used: SQLMap
 <br>
 
 ```
@@ -66,9 +67,9 @@ sqlmap -u http://merc.vul:8080/mercuryfacts/1 --answers="follow=Y" --batch
 
 ---
 
-### Command used: none / browser URL strings
+### Tool used: none / browser URL strings
 
 ## SSH and root access
-### Command used: msfconsole
-<br>
 
+### Tool used: msfconsole
+<br>
