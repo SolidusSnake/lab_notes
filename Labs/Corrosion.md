@@ -124,7 +124,7 @@ Once we are in, we setup a simple webserver, and download LinPeas.sh to the host
 
 ![linpeas](./docs/corrosion/corrosion_08_linpeas.png)
 
-We see an interesting file - user_backup.zip - in "/var/backups". We download it to our local machine and try to see what is inside. Unfortunately, it is password protected. Fortunately for us, we have *john* to help with that!<br><br>
+We see an interesting file - user_backup.zip - in "/var/backups". We download it to our local machine and try to see what is inside. Unfortunately, it is password protected. Fortunately, we have *john* to help with that!<br><br>
 
 ```
 zip2john
