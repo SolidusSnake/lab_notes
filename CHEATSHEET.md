@@ -20,6 +20,8 @@ nmap (-sV / -A) -p21,80,443 x.x.x.x
 ##  gobuster
 ```
 gobuster dir --url http://whatever.com --wordlist /usr/share/wordlists/dirb/common.txt
+
+gobuster dir --url http://whatever.com -x php,html,txt --wordlist /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -o dir.log
 ```
 
 ## netcat
