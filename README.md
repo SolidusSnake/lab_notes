@@ -14,3 +14,7 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(THM) Smag Grotto](./Labs/SmagGrotto.md)
 
 ## [(THM) Simple CTF](./Labs/SimpleCTF.md)
+
+## [(VH) Funbox: Scriptkiddie](./Labs/Funbox.md)
+
+## [(VH) Corrosion: 1](./Labs/Corrosion.md)
