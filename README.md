@@ -18,3 +18,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Funbox: Scriptkiddie](./Labs/Funbox.md)
 
 ## [(VH) Corrosion: 1](./Labs/Corrosion.md)
+
+## [(VH) Hack Me Please: 1](./Labs/HackMePlease.md)
