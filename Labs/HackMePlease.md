@@ -590,7 +590,7 @@ User saket may run the following commands on ubuntu:
     (ALL : ALL) ALL
 ```
 
-As it tu rns out, *saket* can run **everything** with sudo, so our job is pretty much done.<br><br>
+As it turns out, *saket* can run **everything** with sudo, so our job is pretty much done.<br><br>
 
 ```
 sudo -i
