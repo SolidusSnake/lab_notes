@@ -20,3 +20,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Corrosion: 1](./Labs/Corrosion.md)
 
 ## [(VH) Hack Me Please: 1](./Labs/HackMePlease.md)
+
+## [(VH) Doubletrouble: 1](./Labs/DoubleTrouble.md)
