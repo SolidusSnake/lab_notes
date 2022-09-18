@@ -22,3 +22,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Hack Me Please: 1](./Labs/HackMePlease.md)
 
 ## [(VH) Doubletrouble: 1](./Labs/DoubleTrouble.md)
+
+## [(THM) Agent Sudo](./Labs/AgentSudo.md)
