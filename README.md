@@ -28,3 +28,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Dripping Blues: 1](./Labs/DrippingBlues.md)
 
 ## [(VH) Grotesque: 3.0.1](./Labs/Grotesque.md)
+
+## [(HTB) Photobomb](./Labs/Photobomb.md)
