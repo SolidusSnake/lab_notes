@@ -30,3 +30,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(VH) Grotesque: 3.0.1](./Labs/Grotesque.md)
 
 ## [(HTB) Photobomb](./Labs/Photobomb.md)
+
+## [(HTB) Shoppy](./Labs/Shoppy.md)
