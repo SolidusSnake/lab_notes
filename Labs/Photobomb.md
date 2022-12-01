@@ -82,7 +82,7 @@ Right away, we get the user flag:
 **user.txt**
 
 ```
-9b9f0da800c682537c75ffbf542d1998
+9b9f0da8************************
 ```
 
 Next, we see what kind of privileges we have:<br><br>
@@ -141,5 +141,5 @@ From here, we can capture the root flag:
 **root.txt**
 
 ```
-711df426d8a982ec52cad09426e52821
+711df426************************
 ```

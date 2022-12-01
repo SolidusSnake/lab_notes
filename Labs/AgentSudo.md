@@ -225,7 +225,7 @@ After logging in via SSH with *james*, we see 2 files: "Alien_autospy.jpg" and "
 **user_flag.txt**:
 
 ```
-b03d975e8c92a7c04146cfa7a5a313c7
+b03d975e************************
 ```
 
 For the next challenge question, we upload the image to TinEye and find the answer:
@@ -349,7 +349,7 @@ To Mr.hacker,
 Congratulation on rooting this box. This box was designed for TryHackMe. Tips, always update your machine. 
 
 Your flag is 
-b53a02f55b57d4439e3341834d70c062
+b53a02f5************************
 
 By,
 DesKel a.k.a Agent R

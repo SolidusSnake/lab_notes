@@ -140,7 +140,7 @@ We were able to login with "jaeger" and obtain the users flag:
 **user.txt**
 
 ```
-e517df9f0da00f98e8fbd003fc422ae3
+e517df9f************************
 ```
 
 Next, we see what kind of privileges we have:<br><br>
@@ -197,5 +197,5 @@ From here, we can capture the root flag:
 **root.txt**
 
 ```
-9e4d1c8137fed567940080eefaf90b30
+9e4d1c81************************
 ```

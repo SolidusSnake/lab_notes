@@ -32,3 +32,5 @@ Lab notes for various VulnHub machines and TryHackMe rooms
 ## [(HTB) Photobomb](./Labs/Photobomb.md)
 
 ## [(HTB) Shoppy](./Labs/Shoppy.md)
+
+## [(HTB) Precious](./Labs/Precious.md)
