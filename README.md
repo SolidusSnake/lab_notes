@@ -1,5 +1,5 @@
 # Lab Notes
-Lab notes for various VulnHub machines and TryHackMe rooms
+Lab notes for various VulnHub machines and TryHackMe / HackTheBox rooms
 
 ## [(VH) The Planets: Mercury](./Labs/Mercury.md)
 
