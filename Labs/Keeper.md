@@ -21,73 +21,71 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## Web
 
-
-Browsing the URL indicates the server is running CMS Made Simple (CMSMS):<br><br>
+Browsing the URL points us in the direction of another link: **tickets.keeper.htb/rt**<br><br>
 
 ![web_01](./docs/keeper/keeper_01_web.png)
 <br><br>
 
+The login page indicates that they are using *Request Tracker*. A quick search gives us the default login credentials - [as expected] *root / password*.
+
 ![web_02](./docs/keeper/keeper_02_web.png)
 <br><br>
 
-Default credentials: root / password
+Sure enough, the default credentials work and we are logged in.
 
 ![web_03](./docs/keeper/keeper_03_web.png)
+<br><br>
 
-## Portal enumeration
+## Enumeration
 
-"Users"
+Browsing around the site, we find a "Users" section. 
 
 ![users](./docs/keeper/keeper_04_users.png)
 <br><br>
 
-"User Information"
+When we view the properties for Lnorgaard, we see a comment about the user's initial password: *Welcome2023!*
 
 ![user_info](./docs/keeper/keeper_05_userinfo.png)
+<br><br>
 
 ## SSH
+
+Using the provided credentials - *lnorgaard / Welcome2023!* - we find the user.txt flag.
+
+## user.txt
+
+```
+762175**************************
+```
 
 ![ssh](./docs/keeper/keeper_06_ssh.png)
 <br><br>
 
+Back on the website, we see another ticket referencing a *Keepass* crash dump file, as well as the indication that they are using an older [vulnerable] version.
 
-![cve](./docs/simple/simple_02_cve.png)<br><br>
-
-We copy the Python code from Exploit Database, then execute it with the arguments indicated in the code:
-
-## user.txt
-
-## KeePass ticket
-
-![ticket](./docs/keeper/keeper_07_ticket.png)
+![dumpticket](./docs/keeper/keeper_07_ticket.png)
 <br><br>
 
-RT30000.zip --> keepass dump and database files
+Back to our SSH session, we see a file called *RT30000.zip*. The zip file contains two files: *KeePassDumpFull.dmp* and *passcodes.kdbx*. After some searching, we come across an exploit PoC for *CVE-2023-32784* (https://github.com/vdohney/keepass-password-dumper).
 
-https://sourceforge.net/p/keepass/discussion/329220/thread/f3438e6283/
+For this to work, we need a Windows machine due to the tool's .NET requirement. Upon running the tool, we get the following output:
 
-https://github.com/vdohney/keepass-password-dumper
-
-## Exploit
-
-![exploit](./docs/keeper/keeper_08_exploit.png)
+![pwdump](./docs/keeper/keeper_08_exploit.png)
 <br><br>
 
-https://sourceforge.net/p/keepass/discussion/329220/thread/f3438e6283/
+We see part of the password, but at first glance the characters seem out of place. If we backtrack a little, back to *Request Tracker*, we see in the user's profile that they are Danish. So, we just try copying the partial password and search for it on your favorite search engine. 
 
-https://github.com/vdohney/keepass-password-dumper
-
-## Password dump
+The results indicate that the password is part of a Danish desert called "rødgrød med fløde". So, this must be the password for the Keepass database file, right? Our first snag was simply trying to type it out by hand - "rodgrod med flode". This did not work, so we tried simply copying the name straight from the search result: "rødgrød med fløde" (notice the 'o' character is different?), which unlocks the database file.
 
 ![keepass](./docs/keeper/keeper_09_keepass.png)
 <br><br>
 
+Attempting to SSH with 'root' and the provided password failed. Looking at the notes, we see that the key revealed is a PuTTY key. 
+
 ![creds](./docs/keeper/keeper_10_creds.png)
 <br><br>
 
-## SSH Key
-
-convert to putty
+After using the PuTTY Key Generator and the provided password to convert the key to the OpenSSH format, we can now login as root!
 
 ![putty](./docs/keeper/keeper_11_putty.png)
 <br><br>
@@ -107,4 +105,12 @@ Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your 
 You have new mail. 
 Last login: Tue Aug  8 19:00:06 2023 from 10.10.14.41 
 root@keeper:~#
+```
+
+After logging in, we can get the final root.txt flag.
+
+## root.txt
+
+```
+71b2fb**************************
 ```
