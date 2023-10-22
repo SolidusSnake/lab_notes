@@ -34,3 +34,7 @@ Lab notes for various VulnHub machines and TryHackMe / HackTheBox rooms
 ## [(HTB) Shoppy](./Labs/Shoppy.md)
 
 ## [(HTB) Precious](./Labs/Precious.md)
+
+## [(THM) Lazy Admin](./Labs/LazyAdmin.md)
+
+## [(HTB) Keeper](./Labs/Keeper.md)
