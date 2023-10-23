@@ -38,3 +38,5 @@ Lab notes for various VulnHub machines and TryHackMe / HackTheBox rooms
 ## [(THM) Lazy Admin](./Labs/LazyAdmin.md)
 
 ## [(HTB) Keeper](./Labs/Keeper.md)
+
+## [(HTB) Analytics](./Labs/Analytics.md)
