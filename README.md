@@ -40,3 +40,5 @@ Lab notes for various VulnHub machines and TryHackMe / HackTheBox rooms
 ## [(HTB) Keeper](./Labs/Keeper.md)
 
 ## [(HTB) Analytics](./Labs/Analytics.md)
+
+## [(HTB) CozyHosting](./Labs/CozyHosting.md)
