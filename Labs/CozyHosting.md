@@ -1,4 +1,4 @@
-# TITLE
+# CozyHosting
 https://app.hackthebox.com/machines/CozyHosting
 
 ## Port scan
